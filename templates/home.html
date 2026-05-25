@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-search"></i>
+            <h1 style="color: #F5f5f5;font-size:60px;">Cust SRM</h1>
+            <center><h2 style="color: #F5f5f5;font-size:40px;">Global Sentiment Response App</h2></center>
+        </div>
+    </header>
+    <div class="container" >
+        <form method="post" >
+            <label for="pname" style="color: white;font-size:30px;">Product name :</label>
+            <input type="text" id="pname" name="pname" placeholder="Enter Product Name" required>
+
+<!--            <label for="purl">Product URL:</label>-->
+<!--            <input type="text" id="purl" name="purl" placeholder="Optional: URL for specific sites">-->
+
+            <label for="category" style="color: white;font-size:25px;"> Choose a Category :</label>
+            <select name="category" id="category" style="color: #45474B;font-size:15px;">
+              <option value="household">Household Products</option>
+              <option value="fasion">Fashion</option>
+              <option value="automobile">Cars</option>
+              <option value="gadgets">Gadgets</option>
+            </select>
+            <p></p>
+            <button type="submit" style="color: 45474B;font-size:30px;"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </div>
+</body>
+</html>

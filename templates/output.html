@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        // var overall_sentiment_score_percentage;
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Sentiment', {{overall_sentiment_score_percentage}}],
+        ]);
+
+        var options = {
+          width: 1200, height: 360,
+          redFrom: 0, redTo: 25,
+          yellowFrom:55, yellowTo: 75,
+          greenFrom:75,greenTo: 100,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-search"></i>
+<!--            <h1>Sentiment Analysis Result</h1>-->
+<!--            <h1 style="font-size:60px;">Heading 1</h1>-->
+            <h1 style="color: #F5f5f5;font-size:60px;">Sentiment Analysis Result</h1>
+        </div>
+    </header>
+    <div id="chart_div" style="width: 400px; height: 250px; padding-left: 165px; padding-top: 30px;"></div>
+    <div id="box">{{sentiment_llm_response}}</div>
+
+</body>
