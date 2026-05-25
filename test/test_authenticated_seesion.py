@@ -1,0 +1,3 @@
+import authenticated_session
+
+authenticated_session.get_my_session()
