@@ -1,0 +1,6 @@
+/myenv
+/venv
+/__pycache__
+/.idea
+.google-cookie
+.env

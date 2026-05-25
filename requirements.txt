@@ -1,0 +1,8 @@
+Flask==3.0.2
+protobuf==4.25.3
+Requests==2.31.0
+selenium==4.18.1
+google~=3.0.0
+google-cloud-storage
+python-dotenv
+google-generativeai
